@@ -1,6 +1,7 @@
 import 'uno.css'
-// import { useConfigReceiver } from './hook/useConfig'
+import * as meta from '../meta'
 import { defineClientConfig } from '@vuepress/client'
+import { useConfigReceiver, defaultConfigProvider } from './hook/useConfig'
 
 export default defineClientConfig({
     enhance({ app, router, siteData }) {
@@ -8,7 +9,7 @@ export default defineClientConfig({
     },
     setup() {
         // 提供config配置
-        // useConfigReceiver()
+        useConfigReceiver(Object.assign(defaultConfigProvider, meta))
     },
     rootComponents: []
 })

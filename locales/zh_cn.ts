@@ -15,7 +15,7 @@ export default {
     footer: {
         author: '{year} · 凌寒初见',
         description: '月影流花花不语 * 梦入烟水水不兴',
-        survive: 'd 天 h 小时 s 秒',
+        survive: '{day} 天 {hour} 小时 {minute} 分 {second} 秒',
         info: '{title} 存活 {time}'
     },
     menu: [

@@ -13,7 +13,6 @@ import useLocaleReceiver from '../hook/useLocales'
 import { useSiteLocaleData } from '@vuepress/client'
 import { ref, onMounted, onBeforeUnmount } from 'vue'
 import { useConfigProvider } from '../hook/useConfig'
-// import Snowflake from '~icons/fa-regular/snowflake'
 
 const { getPrefixCls, title } = useConfigProvider()
 const prefixCls = getPrefixCls('footer-info')
@@ -22,13 +21,19 @@ const siteLocaleData = useSiteLocaleData()
 const { t } = useLocaleReceiver(siteLocaleData.value)
 
 const liveTime = (value: string) => {
-    const duration = dayjs(new Date()).diff(dayjs(value))
-    return dayjs(duration).format(t('footer.survive'))
+    const diff = dayjs(dayjs().diff(dayjs(value)))
+    const day = dayjs().diff(dayjs(value), 'day')
+    return t('footer.survive', {
+        day,
+        hour: diff.hour(),
+        minute: diff.minute(),
+        second: diff.second()
+    })
 }
 
 let timer: number
 const time = ref('')
-const year = dayjs(new Date()).year()
+const year = dayjs().year()
 
 onMounted(() => {
     if (typeof window !== undefined) {

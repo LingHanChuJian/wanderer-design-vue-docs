@@ -15,7 +15,7 @@ export default {
     footer: {
         author: '{year} · Mr. LingHanChuJian',
         description: 'The shadow of the moon flows and the flowers are silent',
-        survive: 'd [Day] h [Hour] s [Second]',
+        survive: '{day} day {hour} hour {minute} minute {second} second',
         info: '{title} survive {time}'
     },
     menu: [

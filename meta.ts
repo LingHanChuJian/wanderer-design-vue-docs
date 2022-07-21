@@ -20,5 +20,5 @@ export const appId = ''
 export const indexName = ''
 
 /* Github link */
-export const docsLink = ''
+export const docsLink = 'https://github.com/LingHanChuJian/wanderer-design-vue-docs'
 export const wandererLink = 'https://github.com/LingHanChuJian/wanderer-design-vue'

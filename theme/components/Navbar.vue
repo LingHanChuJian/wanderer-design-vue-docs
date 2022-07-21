@@ -4,7 +4,7 @@
         <Logo />
         <div :class="`${prefixCls}-menu-wrap`">
             <Items mode="horizontal" :items="items"></Items>
-            <div class="i-ant-design-github-filled" @click="handleGithub"></div>
+            <a class="i-ant-design-github-filled w-20px h-20px" :href="wandererLink" target="_blank"></a>
             <Docsearch />
         </div>
     </nav>
@@ -20,7 +20,7 @@ import SideButton from './SideButton.vue'
 import { useConfigProvider } from '../hook/useConfig'
 import { useSiteLocaleData } from '@vuepress/client'
 
-const { getPrefixCls } = useConfigProvider()
+const { getPrefixCls, wandererLink } = useConfigProvider()
 const prefixCls = getPrefixCls('navbar')
 
 const siteLocaleData = useSiteLocaleData()
