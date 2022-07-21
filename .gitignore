@@ -27,3 +27,4 @@ dist
 es
 lib
 coverage
+docs/.vuepress
