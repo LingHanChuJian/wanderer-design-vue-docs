@@ -4,7 +4,7 @@
         <Logo />
         <div :class="`${prefixCls}-menu-wrap`">
             <Items mode="horizontal" :items="items"></Items>
-            <OutboundLink />
+            <div class="i-ant-design-github-filled" @click="handleGithub"></div>
             <Docsearch />
         </div>
     </nav>
@@ -25,11 +25,14 @@ const prefixCls = getPrefixCls('navbar')
 
 const siteLocaleData = useSiteLocaleData()
 const items: ItemsProps[] = siteLocaleData.value.menu
-console.log(siteLocaleData.value)
 
 const emit = defineEmits(['toggle-sidebar'])
 const toggleSidebar = () => {
     emit('toggle-sidebar')
+}
+
+const handleGithub = () => {
+    window.open()
 }
 </script>
 
