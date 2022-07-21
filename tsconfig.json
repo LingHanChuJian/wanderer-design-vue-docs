@@ -1,0 +1,26 @@
+{
+    "compilerOptions": {
+        "target": "es6",
+        "useDefineForClassFields": true,
+        "module": "esnext",
+        "moduleResolution": "node",
+        "strict": true,
+        "jsx": "preserve",
+        "sourceMap": true,
+        "resolveJsonModule": true,
+        "isolatedModules": true,
+        "esModuleInterop": true,
+        "allowSyntheticDefaultImports": true,
+        "lib": ["esnext", "dom"],
+        "skipLibCheck": true,
+        "types": ["node", "unplugin-icons/types/vue", "./typings/index"]
+    },
+    "include": [
+        "theme/**/*.ts",
+        "theme/**/*.d.ts",
+        "theme/**/*.tsx",
+        "theme/**/*.vue",
+        "locales/**/*.ts"
+    ],
+    "exclude": ["node_modules"]
+}
