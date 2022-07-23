@@ -23,7 +23,8 @@ onMounted(() => {
         apiKey,
         appId,
         indexName,
-        placeholder: t('docsearch.placeholder')
+        placeholder: t('docsearch.placeholder'),
+        translations: t('docsearch.translations')
     })
 })
 </script>

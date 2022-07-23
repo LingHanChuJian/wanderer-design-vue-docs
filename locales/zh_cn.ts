@@ -18,41 +18,41 @@ export default {
         survive: '{day} 天 {hour} 小时 {minute} 分 {second} 秒',
         info: '{title} 存活 {time}'
     },
-    menu: [
+    navbar: [
         {
             title: '文档',
-            link: '/',
+            link: '/zh',
             name: 'docs'
         },
         {
             title: '组件',
-            link: '/components/layout',
+            link: '/zh/components/layout',
             name: 'components'
         }
     ],
-    side: {
-        docs: [
+    sidebar: {
+        '/zh': [
             {
                 title: 'Wanderer Design Vue',
-                link: '/',
-                name: 'WandererDesignDocs',
+                link: '/zh',
+                name: 'docs-wanderer-design-vue',
             },
             {
                 title: '快速上手',
-                link: '/quickstart',
-                name: 'QuickStart',
+                link: '/zh/quickstart',
+                name: 'docs-quick-start',
             }
         ],
-        components: [
+        '/zh/components/layout': [
             {
                 title: 'Layout 布局',
-                link: '/components/layout',
-                name: 'Layout',
+                link: '/zh/components/layout',
+                name: 'components-layout',
             },
             {
                 title: 'Menu 菜单',
-                link: '/components/menu',
-                name: 'Menu',
+                link: '/zh/components/menu',
+                name: 'components-menu',
             }
         ]
     }

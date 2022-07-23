@@ -1,6 +1,6 @@
 <template>
-    <Menu :mode="mode" :activeKey="activeKey" @update:active-key="handlerActiveKey" @open-change="openChange" @click="menuClick">
-        <template v-for="menu, index in items" :key="index">
+    <Menu :mode="mode" :active-key="activeKey" @update:active-key="handleActiveKey" @open-change="openChange" @click="menuClick">
+        <template v-for="menu in items">
             <Menu.SubMenu v-if="menu.children" :name="menu.name">
                 <template #title>
                     {{ menu.title }}
@@ -31,7 +31,7 @@ const props = defineProps({
     items: { type: Array as PropType<ItemsProps[]>, required: true }
 })
 
-const handlerActiveKey = (key: String | Number) => {
+const handleActiveKey = (key: String | Number) => {
     emit('update:activeKey', key)
 }
 
@@ -40,6 +40,6 @@ const openChange = (openKeys: Array<String | Number>) => {
 }
 
 const menuClick = (info: { key: String | Number, domEvent: MouseEvent }) => {
-    emit('click', info)
+    emit('click', info.key)
 }
 </script>

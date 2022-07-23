@@ -8,7 +8,8 @@ const theme = (): Theme => {
         alias: {
             '@theme/Logo.vue': path.resolve(__dirname, 'components/Logo.vue'),
             '@theme/Footer.vue': path.resolve(__dirname, 'components/Footer.vue'),
-            '@theme/Navbar.vue': path.resolve(__dirname, 'components/Navbar.vue')
+            '@theme/Navbar.vue': path.resolve(__dirname, 'components/Navbar.vue'),
+            '@theme/Sidebar.vue': path.resolve(__dirname, 'components/Sidebar.vue'),
         },
         layouts: {
             Layout: path.resolve(__dirname, 'layouts/Layout.vue'),

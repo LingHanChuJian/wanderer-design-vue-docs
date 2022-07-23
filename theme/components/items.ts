@@ -10,7 +10,7 @@ export interface LinkOptions {
 
 export interface ItemsProps {
     name: string | number
-    link?: LinkOptions
+    link?: string | LinkOptions
     title: string
     children?: ItemsProps[]
 }

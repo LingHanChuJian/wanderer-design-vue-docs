@@ -5,10 +5,10 @@ export default {
     selectText: 'Languages',
     label: 'English',
     docsearch: {
-        placeholder: 'Search Documentation',
+        placeholder: 'Search',
         translations: {
             button: {
-              buttonText: 'Search Documentation',
+              buttonText: 'Search',
             }
         }
     },
@@ -18,7 +18,7 @@ export default {
         survive: '{day} day {hour} hour {minute} minute {second} second',
         info: '{title} survive {time}'
     },
-    menu: [
+    navbar: [
         {
             title: 'Docs',
             link: '/',
@@ -30,34 +30,29 @@ export default {
             name: 'components'
         }
     ],
-    side: {
-        docs: [
+    sidebar: {
+        '/': [
             {
                 title: 'Wanderer Design Vue',
                 link: '/',
-                name: 'WandererDesignDocs',
+                name: 'docs-wanderer-design-vue',
             },
             {
                 title: 'Quick Start',
-                link: '/quickstart',
-                name: 'QuickStart',
-            },
-            {
-                title: 'Cuslinkmize Theme',
-                link: '/cuslinkmizetheme',
-                name: 'CuslinkmizeTheme',
+                link: '/quick-start',
+                name: 'docs-quick-start',
             }
         ],
-        components: [
+        '/components/layout': [
             {
                 title: 'Layout',
                 link: '/components/layout',
-                name: 'Layout',
+                name: 'components-layout',
             },
             {
                 title: 'Menu',
                 link: '/components/menu',
-                name: 'Menu',
+                name: 'components-menu',
             }
         ]
     }

@@ -5,8 +5,12 @@ import { get } from 'lodash-unified'
 
 export type Options = Record<string, string | number>
 
-export const translate = (path: string, options: Options | undefined, locale: SiteLocaleData): string => {
-    return (get(locale, path, path) as string).replace( /\{(\w+)\}/g, (_, key) => `${options?.[key] ?? `{${key}}`}`)
+export const translate = (path: string, options: Options | undefined, locale: SiteLocaleData) => {
+    const value = get(locale, path, path)
+    if (typeof value === 'string') {
+        return value.replace( /\{(\w+)\}/g, (_, key) => `${options?.[key] ?? `{${key}}`}`)
+    }
+    return value
 }
 
 const useLocaleReceiver = (value: SiteLocaleData) => {

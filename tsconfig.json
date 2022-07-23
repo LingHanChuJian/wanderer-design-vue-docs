@@ -13,7 +13,7 @@
         "allowSyntheticDefaultImports": true,
         "lib": ["esnext", "dom"],
         "skipLibCheck": true,
-        "types": ["node", "unplugin-icons/types/vue", "./typings/index"]
+        "types": ["node", "./typings/index"]
     },
     "include": [
         "theme/**/*.ts",

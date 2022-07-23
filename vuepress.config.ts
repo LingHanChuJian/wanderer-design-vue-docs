@@ -45,7 +45,9 @@ export default defineUserConfig({
                 unocss({
                     presets: [
                         presetIcons(),
-                        presetMini()
+                        presetMini({
+                            dark: 'media'
+                        })
                     ]
                 })
             ]
