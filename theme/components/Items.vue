@@ -1,6 +1,6 @@
 <template>
     <Menu :mode="mode" :active-key="activeKey" @update:active-key="handleActiveKey" @open-change="openChange" @click="menuClick">
-        <template v-for="menu in items">
+        <template v-for="menu in items" :key="menu.name">
             <Menu.SubMenu v-if="menu.children" :name="menu.name">
                 <template #title>
                     {{ menu.title }}
@@ -19,11 +19,9 @@
 <script lang="ts" setup>
 import type { PropType } from 'vue'
 import type { ItemsProps } from './items'
-import type { MenuMode } from 'wanderer-design-vue'
+import type { MenuMode, MenuInfo } from 'wanderer-design-vue'
 
 import { Menu } from 'wanderer-design-vue'
-
-const emit = defineEmits(['click', 'update:activeKey', 'openChange'])
 
 const props = defineProps({
     mode: { type: String as PropType<MenuMode> },
@@ -31,15 +29,17 @@ const props = defineProps({
     items: { type: Array as PropType<ItemsProps[]>, required: true }
 })
 
-const handleActiveKey = (key: String | Number) => {
+const emit = defineEmits(['click', 'update:activeKey', 'openChange'])
+
+const handleActiveKey = (key: string | number) => {
     emit('update:activeKey', key)
 }
 
-const openChange = (openKeys: Array<String | Number>) => {
+const openChange = (openKeys: Array<string | number>) => {
     emit('openChange', openKeys)
 }
 
-const menuClick = (info: { key: String | Number, domEvent: MouseEvent }) => {
-    emit('click', info.key)
+const menuClick = (info: MenuInfo) => {
+    emit('click', info)
 }
 </script>

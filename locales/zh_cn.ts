@@ -39,7 +39,7 @@ export default {
             },
             {
                 title: '快速上手',
-                link: '/zh/quickstart',
+                link: '/zh/quick-start',
                 name: 'docs-quick-start',
             }
         ],
