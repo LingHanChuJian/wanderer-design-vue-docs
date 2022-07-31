@@ -1,6 +1,7 @@
 import type { Theme } from 'vuepress'
 
 import { path } from '@vuepress/utils'
+import examples from './plugins/examples-container'
 
 const theme = (): Theme => {
     return {
@@ -15,7 +16,10 @@ const theme = (): Theme => {
             Layout: path.resolve(__dirname, 'layouts/Layout.vue'),
             404: path.resolve(__dirname, 'layouts/404.vue')
         },
-        clientConfigFile: path.resolve(__dirname, './setup.ts')
+        clientConfigFile: path.resolve(__dirname, './setup.ts'),
+        plugins: [
+            ...examples()
+        ]
     }
 }
 

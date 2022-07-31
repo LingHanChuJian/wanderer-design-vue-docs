@@ -5,7 +5,7 @@
             <Layout.Sider v-model:collapsed="collapsed" :class="`${prefixCls}-sidebar`">
                 <Sidebar />
             </Layout.Sider>
-            <Layout.Content>
+            <Layout.Content :class="`${prefixCls}-content ${prefixCls}-markdown m-[40px_60px]`">
                 <keep-alive>
                     <Content />
                 </keep-alive>
@@ -35,6 +35,6 @@ const toggleSidebar = () => {
 
 <style lang="less">
 @import '../styles/default.less';
+@import '../styles/markdown.less';
 @import '../styles/index.less';
-
 </style>

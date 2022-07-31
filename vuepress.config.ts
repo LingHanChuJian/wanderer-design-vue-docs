@@ -3,7 +3,7 @@ import locales from './locales'
 import unocss from 'unocss/vite'
 import { path } from '@vuepress/utils'
 import vitePluginImp from 'vite-plugin-imp'
-import presetMini from '@unocss/preset-mini'
+import presetWind from '@unocss/preset-wind'
 import presetIcons from '@unocss/preset-icons'
 import { defineUserConfig, viteBundler } from 'vuepress'
 import { nprogressPlugin } from '@vuepress/plugin-nprogress'
@@ -29,8 +29,25 @@ export default defineUserConfig({
         ['link', { href: font, rel: 'stylesheet' }]
     ],
     public: path.resolve(__dirname, 'public'),
+    markdown: {
+        importCode: {
+            handleImportPath: str => str.replace(/^@examples/, path.resolve(__dirname, 'examples'))
+        },
+        code: {
+            highlightLines: false,
+            lineNumbers: false
+        }
+    },
     bundler: viteBundler({
         viteOptions: {
+            resolve: {
+                alias: [
+                    {
+                        find: /\/@\//,
+                        replacement: process.cwd() + '/'
+                    }
+                ]
+            },
             plugins: [
                 vitePluginImp({
                     libList: [
@@ -44,10 +61,8 @@ export default defineUserConfig({
                 }),
                 unocss({
                     presets: [
-                        presetIcons(),
-                        presetMini({
-                            dark: 'media'
-                        })
+                        presetWind({ dark: 'media' }) as any,
+                        presetIcons()
                     ]
                 })
             ]

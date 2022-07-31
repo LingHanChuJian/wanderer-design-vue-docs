@@ -1,4 +1,11 @@
 declare module '@theme/*' {
-    import Vue from 'vue'
-    export default Vue
+    import type { DefineComponent } from 'vue'
+    const component: DefineComponent<{}, {}, any>
+    export default component
+}
+
+declare module '*.vue' {
+    import type { DefineComponent } from 'vue'
+    const component: DefineComponent<{}, {}, any>
+    export default component
 }

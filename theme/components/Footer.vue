@@ -1,6 +1,6 @@
 <template>
     <div :class="prefixCls">
-        <p :class="['i-fa-regular-snowflake', `${prefixCls}-snowflake`, 'w-100%']"></p>
+        <p :class="`${prefixCls}-snowflake i-fa-regular-snowflake w-100%`"></p>
         <p>&copy;{{ t('footer.author', { year }) }}</p>
         <p>{{ t('footer.description') }}</p>
         <p><span :class="`${prefixCls}-dance`">(ง •̀_•́)ง</span> {{ t('footer.info', { title, time }) }}</p>

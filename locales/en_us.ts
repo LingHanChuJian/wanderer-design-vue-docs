@@ -38,9 +38,9 @@ export default {
                 name: 'docs-wanderer-design-vue',
             },
             {
-                title: 'Quick Start',
-                link: '/quick-start',
-                name: 'docs-quick-start',
+                title: 'Getting Started',
+                link: '/getting-started',
+                name: 'docs-getting-started',
             }
         ],
         '/components/layout': [
