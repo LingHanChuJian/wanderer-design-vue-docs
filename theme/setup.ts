@@ -1,4 +1,5 @@
 import 'uno.css'
+
 import * as meta from '../meta'
 import { createPinia } from 'pinia'
 import { defineClientConfig } from '@vuepress/client'

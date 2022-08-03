@@ -6,7 +6,6 @@ import vitePluginImp from 'vite-plugin-imp'
 import presetWind from '@unocss/preset-wind'
 import presetIcons from '@unocss/preset-icons'
 import { defineUserConfig, viteBundler } from 'vuepress'
-import { nprogressPlugin } from '@vuepress/plugin-nprogress'
 import { font, title, author, description, keywords } from './meta'
 
 export default defineUserConfig({
@@ -33,10 +32,10 @@ export default defineUserConfig({
         importCode: {
             handleImportPath: str => str.replace(/^@examples/, path.resolve(__dirname, 'examples'))
         },
-        code: {
-            highlightLines: false,
-            lineNumbers: false
-        }
+        // code: {
+        //     highlightLines: false,
+        //     lineNumbers: false
+        // }
     },
     bundler: viteBundler({
         viteOptions: {
@@ -67,8 +66,5 @@ export default defineUserConfig({
                 })
             ]
         }
-    }),
-    plugins: [
-        nprogressPlugin()
-    ]
+    })
 })

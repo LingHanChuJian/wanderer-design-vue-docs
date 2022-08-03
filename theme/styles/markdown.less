@@ -1,5 +1,76 @@
-@prefix-cls: ~'@{wanderer-theme-prefix}-markdown';
+div[class*=language-] {
+    @top: 10px;
+    @width: 30px;
+    @line-height: 1.5;
 
-.@{prefix-cls} {
-    
+    position: relative;
+    background-color: #1d1f21;
+    border-radius: 6px;
+
+    .line-numbers {
+        top: @top;
+        width: @width;
+        text-align: center;
+        counter-reset: line-number;
+        position: absolute;
+        color: #888f96;
+        line-height: @line-height;
+
+        .line-number {
+
+            &::before {
+                counter-increment: line-number;
+                content: counter(line-number);
+            }
+        }
+    }
+
+    pre[class*=language-] {
+        padding: @top 0 @top @width + 10px;
+        line-height: @line-height;
+        color: #CCCCCC;
+
+        code {
+            font-family: inherit;
+            font-size: 16px;
+            font-weight: bold;
+        }
+
+        .token {
+            .punctuation {
+                color: #CCCCCC;
+            }
+
+            .property,
+            .tag {
+                color: #e45649;
+            }
+
+            .keyword {
+                color: #a626a4;
+            }
+
+            .number {
+                color: #d19a66;
+            }
+
+            .selector,
+            .attr-name,
+            .char
+            .builtin
+            .inserted {
+                color: #986801;
+            }
+
+            .atrule,
+            .string,
+            .attr-value {
+                color: #50a14f;
+            }
+
+            .function {
+                color: #61aeee;
+            }
+        }
+    }
 }

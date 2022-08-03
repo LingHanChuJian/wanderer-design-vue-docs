@@ -1,4 +1,3 @@
-<!-- 代码样式采用 unocss -->
 <template>
     <Layout class="text-#FFFFFF text-center mb-48px">
         <Layout.Header class="bg-#7dbcea">Header</Layout.Header>

@@ -1,11 +1,13 @@
 import type { Theme } from 'vuepress'
 
 import { path } from '@vuepress/utils'
-import examples from './plugins/examples-container'
+import { prismjsPlugin } from '@vuepress/plugin-prismjs'
+import examplesPlugin from './plugins/examples-container'
+import { nprogressPlugin } from '@vuepress/plugin-nprogress'
 
 const theme = (): Theme => {
     return {
-        name: 'vuepress-theme-wanderer',
+        name: '@vuepress/theme-wanderer-design',
         alias: {
             '@theme/Logo.vue': path.resolve(__dirname, 'components/Logo.vue'),
             '@theme/Footer.vue': path.resolve(__dirname, 'components/Footer.vue'),
@@ -18,7 +20,11 @@ const theme = (): Theme => {
         },
         clientConfigFile: path.resolve(__dirname, './setup.ts'),
         plugins: [
-            ...examples()
+            nprogressPlugin(),
+            prismjsPlugin({
+                preloadLanguages: ['css', 'javascript', 'markdown', 'typescript', 'less', 'xml']
+            }),
+            examplesPlugin() as any
         ]
     }
 }

@@ -11,13 +11,16 @@
                 <slot name="description"></slot>
             </div>
             <div :class="`${prefixCls}-box-actions`">
+                <span :class="`${prefixCls}-box-actions-copy`" ref="copy">
+                    <i class="i-fa-regular:copy"></i>
+                </span>
                 <span :class="`${prefixCls}-box-actions-code`" @click="showCode">
-                    <img v-show="!visible" :src="getAssets('expand.svg')" />
-                    <img v-show="visible" :src="getAssets('unexpand.svg')" />
+                    <i v-show="!visible" class="i-bx:code"></i>
+                    <i v-show="visible" class="i-bx:code-alt"></i>
                 </span>
             </div>
         </section>
-        <section :class="`${prefixCls}-box-code`">
+        <section :class="`${prefixCls}-box-code`" ref="code">
             <Dropdown appear :visible="visible">
                 <slot name="code"></slot>
             </Dropdown>
@@ -26,8 +29,9 @@
 </template>
 
 <script lang="ts" setup>
-import { getCurrentInstance, ref } from 'vue'
+import Clipboard from 'clipboard'
 import { Dropdown } from 'wanderer-design-vue'
+import { getCurrentInstance, ref, nextTick, onUnmounted } from 'vue'
 
 const props = defineProps({
     title: String
@@ -35,17 +39,42 @@ const props = defineProps({
 
 const instance = getCurrentInstance()
 
+const code = ref()
+const copy = ref()
 const prefixCls = 'examples'
 const visible = ref(false)
 const uuid = ref(`uuid-${prefixCls}-${instance?.uid}`)
+
+let clipboard: Clipboard
+
+nextTick(() => {
+    if (!clipboard) {
+        clipboard = new Clipboard(copy.value, {
+            text: () => {
+                return code.value.querySelector('code').innerText
+            }
+        })
+
+        clipboard.on('success', (e) => {
+            e.clearSelection()
+        })
+
+        clipboard.on('error', function(e) {
+            console.error('Action:', e.action)
+            console.error('Trigger:', e.trigger)
+        })
+    }
+})
 
 const showCode = () => {
     visible.value = !visible.value
 }
 
-const getAssets = (name: string) => {
-    return new URL(`./assets/${name}`, import.meta.url).href
-}
+onUnmounted(() => {
+    if (clipboard) {
+        clipboard.destroy()
+    }
+})
 </script>
 
 <style lang="less" scoped>
@@ -89,7 +118,8 @@ const getAssets = (name: string) => {
             transition: all 0.2s;
             color: #00000073;
 
-            img {
+            i {
+                display: inline-block;
                 width: 16px;
                 height: 16px;
             }
@@ -106,6 +136,8 @@ const getAssets = (name: string) => {
         border-bottom: 1px dashed #f0f0f0;
     }
 
-
+    &-box-code {
+        padding: 0 24px;
+    }
 }
 </style>
