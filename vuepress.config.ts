@@ -2,8 +2,8 @@ import theme from './theme'
 import locales from './locales'
 import unocss from 'unocss/vite'
 import { path } from '@vuepress/utils'
+import presetUno from '@unocss/preset-uno'
 import vitePluginImp from 'vite-plugin-imp'
-import presetWind from '@unocss/preset-wind'
 import presetIcons from '@unocss/preset-icons'
 import { defineUserConfig, viteBundler } from 'vuepress'
 import { font, title, author, description, keywords } from './meta'
@@ -60,7 +60,7 @@ export default defineUserConfig({
                 }),
                 unocss({
                     presets: [
-                        presetWind({ dark: 'media' }) as any,
+                        presetUno({ dark: 'media' }) as any,
                         presetIcons()
                     ]
                 })

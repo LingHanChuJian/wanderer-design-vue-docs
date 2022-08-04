@@ -30,7 +30,7 @@
     "@types/lodash": "^4.14.182",
     "@types/lodash-es": "^4.17.6",
     "@unocss/preset-icons": "^0.44.5",
-    "@unocss/preset-wind": "^0.44.7",
+    "@unocss/preset-uno": "^0.45.1",
     "@vuepress/plugin-container": "^2.0.0-beta.49",
     "@vuepress/plugin-nprogress": "^2.0.0-beta.47",
     "@vuepress/plugin-prismjs": "^2.0.0-beta.49",

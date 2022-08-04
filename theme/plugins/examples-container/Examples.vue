@@ -81,6 +81,7 @@ onUnmounted(() => {
 @prefix-cls: examples;
 
 .@{prefix-cls} {
+    margin-bottom: 20px;
     border: 1px solid #f0f0f0;
 
     &-box-dome {
@@ -101,6 +102,7 @@ onUnmounted(() => {
 
         a {
             text-decoration: none;
+            color: #000000d9;
         }
     }
 

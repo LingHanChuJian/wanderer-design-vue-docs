@@ -37,5 +37,5 @@
 import { ref } from 'vue'
 import { Layout } from 'wanderer-design-vue'
 
-const collapsed = ref(true)
+const collapsed = ref(false)
 </script>

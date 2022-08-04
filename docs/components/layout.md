@@ -26,6 +26,19 @@ Classic page layouts.
 :::
 ::::
 
+:::: Examples Custom trigger
+::: template dome
+<CustomTrigger />
+:::
+::: template description
+Directly add button settings corresponding to collapsed
+:::
+::: template code
+@[code vue](@examples/layout/CustomTrigger.vue)
+:::
+::::
+
 <script lang='ts' setup>
 import Basic from '/@/examples/layout/Basic.vue'
+import CustomTrigger from '/@/examples/layout/CustomTrigger.vue'
 </script>
