@@ -1,4 +1,4 @@
-# Layout 布局
+# Layout
 
 Handling the overall layout of a page.
 
@@ -31,12 +31,38 @@ Classic page layouts.
 <CustomTrigger />
 :::
 ::: template description
-Directly add button settings corresponding to collapsed
+Just add the button binding v-model:collapsed directly
 :::
 ::: template code
 @[code vue](@examples/layout/CustomTrigger.vue)
 :::
 ::::
+
+# API
+
+```vue
+<Layout>
+    <Header>header</Header>
+    <Layout>
+        <Sider>left sidebar</Sider>
+        <Content>main content</Content>
+        <Sider>right sidebar</Sider>
+    </Layout>
+    <Footer>footer</Footer>
+</Layout>
+```
+
+### Layout.Sider
+
+The sidebar.
+
+| Property | Description | Type | Default | 
+| -------- | ----------- | ---- | ------- |
+| collapsed(v-model) | to set the current status | boolean | false |
+| width | the expanded width of the sidebar | number | 250 |
+| collapsedWidth | width of the collapsed sidebar | number | 0 |
+| matchMedia | whether to enable media query | boolean | true |
+| matchMediaWidth | media query width | number | 860 |
 
 <script lang='ts' setup>
 import Basic from '/@/examples/layout/Basic.vue'

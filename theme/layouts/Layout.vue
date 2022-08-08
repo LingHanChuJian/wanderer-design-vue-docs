@@ -5,13 +5,15 @@
             <Layout.Sider v-model:collapsed="collapsed" :class="`${prefixCls}-sidebar`" style="box-shadow: 0 2px 8px #f0f1f2;">
                 <Sidebar />
             </Layout.Sider>
-            <Layout.Content :class="`${prefixCls}-content m-[40px_60px]`">
-                <keep-alive>
-                    <Content class="markdown" />
-                </keep-alive>
-            </Layout.Content>
+            <Layout>
+                <Layout.Content :class="`${prefixCls}-content m-[40px_60px]`">
+                    <keep-alive>
+                        <Content class="markdown" />
+                    </keep-alive>
+                </Layout.Content>
+                <Layout.Footer><Footer /></Layout.Footer>
+            </Layout>
         </Layout>
-        <Layout.Footer><Footer /></Layout.Footer>
     </Layout>
 </template>
 

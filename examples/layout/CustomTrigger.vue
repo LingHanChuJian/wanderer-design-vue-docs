@@ -5,15 +5,15 @@
                 <div class="h-75px lh-75px text-center">logo</div>
                 <Menu.SubMenu name="user">
                     <template #title>
-                        <i class="i-bx:user inline-block"></i>
-                        User
+                        <i class="i-bx:user inline-block w-20px h-20px !align-bottom"></i>
+                        用户
                     </template>
                     <Menu.MenuItem name="user-one">User One</Menu.MenuItem>
                     <Menu.MenuItem name="user-two">User Two</Menu.MenuItem>
                     <Menu.MenuItem name="user-three">User Three</Menu.MenuItem>
                 </Menu.SubMenu>
                 <Menu.MenuItem name="archive">
-                    <i class="i-fluent:archive-20-regular inline-block"></i>
+                    <i class="i-fluent:archive-20-regular inline-block w-20px h-20px !align-bottom"></i>
                     归档
                 </Menu.MenuItem>
             </Menu>
