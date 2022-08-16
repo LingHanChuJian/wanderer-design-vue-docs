@@ -17,6 +17,18 @@
                 <i class="i-bi:bookmark-heart"></i>
                 record
             </Menu.MenuItem>
+            <Menu.SubMenu name="lists">
+                <template #title>
+                    <i class="i-ci:list-ul"></i>
+                    lists
+                </template>
+                <Menu.MenuItem name="animes">
+                    animes
+                </Menu.MenuItem>
+                <Menu.MenuItem name="musics">
+                    musics
+                </Menu.MenuItem>
+            </Menu.SubMenu>
         </Menu.SubMenu>
         <Menu.SubMenu name="list">
             <template #title>
@@ -47,6 +59,6 @@
 import { ref } from 'vue'
 import { Menu } from 'wanderer-design-vue'
 
-const activeKey = ref('home')
+const activeKey = ref('animes')
 const openKeys = ref(['archive', 'list'])
 </script>

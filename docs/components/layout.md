@@ -41,22 +41,28 @@ Just add the button binding v-model:collapsed directly
 # API
 
 ```vue
-<Layout>
-    <Header>header</Header>
+<template>
     <Layout>
-        <Sider>left sidebar</Sider>
-        <Content>main content</Content>
-        <Sider>right sidebar</Sider>
+        <Header>header</Header>
+        <Layout>
+            <Sider>left sidebar</Sider>
+            <Content>main content</Content>
+            <Sider>right sidebar</Sider>
+        </Layout>
+        <Footer>footer</Footer>
     </Layout>
-    <Footer>footer</Footer>
-</Layout>
+</template>
+
+<script lang="ts" setup>
+import { Layout, Header, Content, Sider, Footer } from 'wanderer-design-vue'
+</script>
 ```
 
 ### Layout.Sider
 
 The sidebar.
 
-| Property | Description | Type | Default | 
+| Property | Description | Type | Default |
 | -------- | ----------- | ---- | ------- |
 | collapsed(v-model) | to set the current status | boolean | false |
 | width | the expanded width of the sidebar | number | 250 |

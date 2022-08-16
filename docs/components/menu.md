@@ -36,6 +36,60 @@ Vertical side navigation menu.
 :::
 ::::
 
+# API
+
+```vue
+<template>
+    <Menu>
+        <MenuItem name="1">MenuItem</MenuItem>
+        <SubMenu name="2">
+            <MenuItem name="2-1">SubMenuItem</MenuItem>
+        </SubMenu>
+    </Menu>
+</template>
+
+<script lang="ts" setup>
+import { Menu, MenuItem, SubMenu } from 'wanderer-design-vue'
+</script>
+```
+
+### Menu
+
+| Property | Description | Type | Default |
+| -------- | ----------- | ---- | ------- |
+| activeKey(v-model) | string with the keys of currently selected menu item | `string` \| `number` | - |
+| openKeys(v-model) | array with the keys of currently opened sub menus | Array<`string` \| `number`> | [] |
+| mode | type of the menu | `vertical` \| `horizontal` | `horizontal` |
+| triggerSubMenuAction | method of trigger submenu | `click` \| `hover` | `hover` |
+
+### Menu Events
+
+| Events Name | Description | Arguments |
+| ----------- | ----------- | --------- |
+| openChange | called when open/close sub menu | function(openKeys: string[]) |
+| click | callback executed when a menu item is clicked | function({ name, link, domEvent }) |
+
+### Menu.SubMenu
+
+| Property | Description | Type | Default |
+| -------- | ----------- | ---- | ------- |
+| name | Unique ID of the sub menu, required | `string` \| `number` | - |
+| disabled | whether sub menu is disabled or not | `boolean` | false |
+| title | title of the sub menu | `string` \| `slot` | - |
+
+### Menu.MenuItem
+
+| Property | Description | Type | Default |
+| -------- | ----------- | ---- | ------- |
+| name | unique id of the menu item, required | `string` \| `number` | - |
+| disabled | whether menu item is disabled or not | `boolean` | false |
+
+The children of Menu.SubMenu must be `MenuItem` or `SubMenu`.
+
+`SubMenu` or `MenuItem` must pass the name. If it is not passed, program does not work properly. 
+
+
+
 <script lang='ts' setup>
 import Horizontal from '/@/examples/menu/Horizontal.vue'
 import Vertical from '/@/examples/menu/Vertical.vue'
