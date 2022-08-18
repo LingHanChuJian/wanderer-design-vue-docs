@@ -14,24 +14,24 @@
 
 # Examples
 
-:::: Examples Top Navigation
+:::: Examples 顶部导航
 ::: template dome
 <Horizontal />
 :::
 ::: template description
-Horizontal top navigation menu.
+水平的顶部导航菜单.
 :::
 ::: template code
 @[code vue](@examples/menu/Horizontal.vue)
 :::
 ::::
 
-:::: Examples Side Navigation
+:::: Examples 侧边栏导航
 ::: template dome
 <Vertical />
 :::
 ::: template description
-Vertical side navigation menu.
+垂直的顶部导航菜单.
 :::
 ::: template code
 @[code vue](@examples/menu/Vertical.vue)
