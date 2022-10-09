@@ -53,6 +53,11 @@ export default {
                 title: 'Menu 菜单',
                 link: '/zh/components/menu',
                 name: 'components-menu',
+            },
+            {
+                title: 'Live2d 看板娘',
+                link: '/zh/components/live2d',
+                name: 'components-live2d',
             }
         ]
     }

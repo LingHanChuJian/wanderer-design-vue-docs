@@ -28,6 +28,7 @@ export default defineUserConfig({
         ['link', { href: font, rel: 'stylesheet' }]
     ],
     public: path.resolve(__dirname, 'public'),
+    clientConfigFile: path.resolve(__dirname, 'setup.ts'),
     markdown: {
         importCode: {
             handleImportPath: str => str.replace(/^@examples/, path.resolve(__dirname, 'examples'))
