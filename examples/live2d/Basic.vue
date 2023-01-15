@@ -13,6 +13,6 @@ const live2dRef = ref()
 const models = ref(['../models/Murasame/Murasame.model3.json'].map(item => withBase(item)))
 
 onBeforeUnmount(() => {
-    live2dRef.value.states.value.release()
+    live2dRef.value.states.value?.release()
 })
 </script>

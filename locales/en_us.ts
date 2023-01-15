@@ -55,6 +55,11 @@ export default {
                 name: 'components-menu',
             },
             {
+                title: 'Button',
+                link: '/components/button',
+                name: 'components-button',
+            },
+            {
                 title: 'Live2d',
                 link: '/components/live2d',
                 name: 'components-live2d',

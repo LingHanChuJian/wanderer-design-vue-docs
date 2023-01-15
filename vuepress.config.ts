@@ -33,10 +33,6 @@ export default defineUserConfig({
         importCode: {
             handleImportPath: str => str.replace(/^@examples/, path.resolve(__dirname, 'examples'))
         },
-        // code: {
-        //     highlightLines: false,
-        //     lineNumbers: false
-        // }
     },
     bundler: viteBundler({
         viteOptions: {

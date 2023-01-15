@@ -55,6 +55,11 @@ export default {
                 name: 'components-menu',
             },
             {
+                title: 'Button 按钮',
+                link: '/components/button',
+                name: 'components-button',
+            },
+            {
                 title: 'Live2d 看板娘',
                 link: '/zh/components/live2d',
                 name: 'components-live2d',
