@@ -85,7 +85,7 @@ onUnmounted(() => {
     border: 1px solid #f0f0f0;
 
     &-box-dome {
-        padding: 42px 24px 50px;
+        padding: 40px 20px;
         border-bottom: 1px solid #f0f0f0;
     }
 
@@ -140,6 +140,12 @@ onUnmounted(() => {
 
     &-box-code {
         padding: 0 24px;
+    }
+
+    @media (max-width: 860px) {
+        &-box-dome {
+            padding: 20px;
+        }
     }
 }
 </style>

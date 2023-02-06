@@ -88,8 +88,6 @@ The children of Menu.SubMenu must be `MenuItem` or `SubMenu`.
 
 `SubMenu` or `MenuItem` must pass the name. If it is not passed, program does not work properly. 
 
-
-
 <script lang='ts' setup>
 import Horizontal from '/@/examples/menu/Horizontal.vue'
 import Vertical from '/@/examples/menu/Vertical.vue'

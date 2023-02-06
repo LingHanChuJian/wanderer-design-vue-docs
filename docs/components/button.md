@@ -56,7 +56,21 @@ To mark a button as disabled, add the `disabled` property to the `Button`.
 :::
 ::::
 
+:::: Examples Size
+::: template dome
+<Size />
+:::
+::: template description
+Buttons are available in `large`, `middle`, `small` and `mini` sizes.
+Omit the size property for a button with the `middle` size.
+:::
+::: template code
+@[code vue](@examples/button/Size.vue)
+:::
+::::
+
 <script lang='ts' setup>
+import Size from '/@/examples/Button/Size.vue'
 import Basic from '/@/examples/Button/Basic.vue'
 import Loading from '/@/examples/Button/Loading.vue'
 import Disabled from '/@/examples/Button/Disabled.vue'

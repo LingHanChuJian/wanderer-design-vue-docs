@@ -6,7 +6,7 @@
                 <Sidebar />
             </Layout.Sider>
             <Layout>
-                <Layout.Content :class="`${prefixCls}-content m-[40px_60px]`">
+                <Layout.Content :class="`${prefixCls}-content m-[20px_40px]`">
                     <keep-alive>
                         <Content class="markdown" />
                     </keep-alive>
@@ -38,4 +38,15 @@ const toggleSidebar = () => {
 <style lang="less">
 @import '../styles/default.less';
 @import '../styles/index.less';
+
+@layout-prefix-cls: ~'@{wanderer-theme-prefix}-layout';
+
+.@{layout-prefix-cls} {
+    
+    @media (max-width: 860px) {
+        &-content {
+            margin: 10px;
+        }
+    }
+}
 </style>

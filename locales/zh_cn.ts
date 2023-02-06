@@ -2,8 +2,8 @@ export default {
     lang: 'zh-cn',
     title: 'Wanderer Design Vue',
     description: 'blog UI 界面设计基于 Vue 3.x 实现',
-    selectText: '选择语言',
-    label: '简体中文',
+    label: 'English',
+    link: '',
     docsearch: {
         placeholder: '搜索文档',
         translations: {

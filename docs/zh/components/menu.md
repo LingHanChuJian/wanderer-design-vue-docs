@@ -89,3 +89,8 @@ import { Menu, MenuItem, SubMenu } from 'wanderer-design-vue'
 Menu.SubMenu 的子元素必须是 `MenuItem` 或者 `SubMenu`.
 
 `SubMenu` 和 `MenuItem` 必须传递 name，如不传递, 会导致程序无法正常运行.
+
+<script lang='ts' setup>
+import Horizontal from '/@/examples/menu/Horizontal.vue'
+import Vertical from '/@/examples/menu/Vertical.vue'
+</script>

@@ -2,8 +2,8 @@ export default {
     lang: 'en-us',
     title: 'Wanderer Design Vue',
     description: 'Personal blog UI is implemented based on Vue 3.x',
-    selectText: 'Languages',
-    label: 'English',
+    link: '/zh',
+    label: '简体中文',
     docsearch: {
         placeholder: 'Search',
         translations: {
