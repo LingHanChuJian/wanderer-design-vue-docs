@@ -64,11 +64,11 @@ The sidebar.
 
 | Property | Description | Type | Default |
 | -------- | ----------- | ---- | ------- |
-| collapsed(v-model) | to set the current status | boolean | false |
-| width | the expanded width of the sidebar | number | 250 |
-| collapsedWidth | width of the collapsed sidebar | number | 0 |
-| matchMedia | whether to enable media query | boolean | true |
-| matchMediaWidth | media query width | number | 860 |
+| collapsed(v-model) | to set the current status | `boolean` | false |
+| width | the expanded width of the sidebar | `number` | 250 |
+| collapsedWidth | width of the collapsed sidebar | `number` | 0 |
+| matchMedia | whether to enable media query | `boolean` | true |
+| matchMediaWidth | media query width | `number` | 860 |
 
 <script lang='ts' setup>
 import Basic from '/@/examples/layout/Basic.vue'

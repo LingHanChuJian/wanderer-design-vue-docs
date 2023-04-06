@@ -35,11 +35,11 @@ import { Live2d } from 'wanderer-design-vue'
 
 | Property | Description | Type | Default |
 | -------- | ----------- | ---- | ------- |
-| width | canvas width | number | - |
-| height | canvas height | number | - |
-| models | model3.json collection | string[] | [] |
-| scale | live2d scale | number | 1 |
-| centerPosition | live2d center position | [number, number] | - |
+| width | canvas width | `number` | - |
+| height | canvas height | `number` | - |
+| models | model3.json collection | `string[]` | [] |
+| scale | live2d scale | `number` | 1 |
+| position | live2d center position | `[number, number]` | - |
 
 ### Live2d Expose
 

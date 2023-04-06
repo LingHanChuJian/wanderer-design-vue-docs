@@ -18,52 +18,53 @@ export default {
         survive: '{day} 天 {hour} 小时 {minute} 分 {second} 秒',
         info: '{title} 存活 {time}'
     },
-    navbar: [
+    sidebar: [
         {
             title: '文档',
-            link: '/zh',
-            name: 'docs'
+            name: 'zh-docs',
+            children: [
+                {
+                    title: 'Wanderer Design Vue',
+                    link: '/zh',
+                    name: 'zh-docs-wanderer-design-vue',
+                },
+                {
+                    title: '开始',
+                    link: '/zh/getting-started',
+                    name: 'zh-docs-getting-started',
+                }
+            ]
         },
         {
             title: '组件',
-            link: '/zh/components/layout',
-            name: 'components'
+            name: 'zh-components',
+            children: [
+                {
+                    title: 'Layout 布局',
+                    link: '/zh/components/layout',
+                    name: 'zh-components-layout',
+                },
+                {
+                    title: 'Menu 菜单',
+                    link: '/zh/components/menu',
+                    name: 'zh-components-menu',
+                },
+                {
+                    title: 'Button 按钮',
+                    link: '/components/button',
+                    name: 'zh-components-button',
+                },
+                {
+                    title: 'Live2d 看板娘',
+                    link: '/zh/components/live2d',
+                    name: 'zh-components-live2d',
+                },
+                {
+                    title: 'Timeline 时间轴',
+                    link: '/zh/components/timeline',
+                    name: 'zh-components-timeline'
+                }
+            ]
         }
-    ],
-    sidebar: {
-        '/zh': [
-            {
-                title: 'Wanderer Design Vue',
-                link: '/zh',
-                name: 'docs-wanderer-design-vue',
-            },
-            {
-                title: '开始',
-                link: '/getting-started',
-                name: 'docs-getting-started',
-            }
-        ],
-        '/zh/components/layout': [
-            {
-                title: 'Layout 布局',
-                link: '/zh/components/layout',
-                name: 'components-layout',
-            },
-            {
-                title: 'Menu 菜单',
-                link: '/zh/components/menu',
-                name: 'components-menu',
-            },
-            {
-                title: 'Button 按钮',
-                link: '/components/button',
-                name: 'components-button',
-            },
-            {
-                title: 'Live2d 看板娘',
-                link: '/zh/components/live2d',
-                name: 'components-live2d',
-            }
-        ]
-    }
+    ]
 }

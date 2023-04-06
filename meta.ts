@@ -1,4 +1,4 @@
-import { startCase } from 'lodash-unified'
+import { startCase } from 'lodash'
 import { name, author, description, keywords } from './package.json'
 
 /* Meta */

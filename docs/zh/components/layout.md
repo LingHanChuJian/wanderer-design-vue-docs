@@ -57,11 +57,11 @@
 
 | Property | Description | Type | Default | 
 | -------- | ----------- | ---- | ------- |
-| collapsed(v-model) | 当前收起状态 | boolean | false |
-| width | 展开宽度 | number | 250 |
-| collapsedWidth | 收缩宽度 | number | 0 |
-| matchMedia | 是否开启自适应 | boolean | true |
-| matchMediaWidth | 媒体查询自适应宽度 | number | 860 |
+| collapsed(v-model) | 当前收起状态 | `boolean` | false |
+| width | 展开宽度 | `number` | 250 |
+| collapsedWidth | 收缩宽度 | `number` | 0 |
+| matchMedia | 是否开启自适应 | `boolean` | true |
+| matchMediaWidth | 媒体查询自适应宽度 | `number` | 860 |
 
 <script lang='ts' setup>
 import Basic from '/@/examples/layout/Basic.vue'

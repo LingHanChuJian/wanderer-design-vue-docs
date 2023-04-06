@@ -8,6 +8,62 @@ import presetIcons from '@unocss/preset-icons'
 import { defineUserConfig, viteBundler } from 'vuepress'
 import { font, title, author, description, keywords } from './meta'
 
+interface IMatcher {
+    pattern: RegExp
+    styleDir: string
+}
+
+const matchComponents: IMatcher[] = [
+    {
+        pattern: /^Button/i,
+        styleDir: 'button',
+    },
+    {
+        pattern: /^Dropdown/i,
+        styleDir: 'dropdown'
+    },
+    {
+        pattern: /^Layout|^Header|^Sider|^Content|^Footer/i,
+        styleDir: 'layout'
+    },
+    {
+        pattern: /^Live2d/i,
+        styleDir: 'live2d'
+    },
+    {
+        pattern: /^Menu|^Sub-Menu/i,
+        styleDir: 'menu'
+    },
+    {
+        pattern: /^Popup/i,
+        styleDir: 'popup'
+    },
+    {
+        pattern: /^Timeline|^Sub-Timeline/i,
+        styleDir: 'timeline'
+    }
+]
+
+function kebabCase(key: string) {
+    const result = key.replace(/([A-Z])/g, ' $1').trim()
+    return result.split(' ').join('-').toLowerCase()
+}
+
+function getStyleDir(compName: string): string {
+    let styleDir: string | undefined
+    for (let i = 0, len = matchComponents.length; i < len; i++) {
+      const matcher = matchComponents[i]
+      if (compName.match(matcher.pattern)) {
+        styleDir = matcher.styleDir
+        break
+      }
+    }
+    if (!styleDir)
+      styleDir = kebabCase(compName)
+  
+    return styleDir
+}
+
 export default defineUserConfig({
     lang: 'en-US',
     theme,
@@ -50,7 +106,8 @@ export default defineUserConfig({
                         {
                             libName: 'wanderer-design-vue',
                             style(name) {
-                                return `wanderer-design-vue/es/${name}/style/index`
+                                const dir = getStyleDir(name)
+                                return `wanderer-design-vue/es/${dir}/style`
                             }
                         }
                     ]

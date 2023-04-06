@@ -2,6 +2,7 @@
     <Menu
         :mode="mode"
         :active-key="activeKey"
+        :open-keys="openKeys"
         @update:active-key="handleActiveKey"
         @open-change="openChange"
         @click="menuClick"
@@ -21,6 +22,7 @@ import { Menu } from 'wanderer-design-vue'
 const props = defineProps({
     mode: { type: String as PropType<MenuMode> },
     activeKey: [String, Number],
+    openKeys: { type: Array as PropType<Array<string | number>>, default() { return [] } },
     items: { type: Array as PropType<ItemsProps[]>, required: true }
 })
 

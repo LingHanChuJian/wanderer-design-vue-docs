@@ -1,7 +1,7 @@
 import type { SiteLocaleData } from '@vuepress/client'
 
 import { reactive } from 'vue'
-import { get } from 'lodash-unified'
+import { get } from 'lodash-es'
 
 export type Options = Record<string, string | number>
 
